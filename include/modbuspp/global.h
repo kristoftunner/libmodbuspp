@@ -20,7 +20,7 @@
 #include <cstddef>
 #include <cerrno>
 #include <sys/types.h>
-#include <modbus.h>
+#include <modbus/modbus.h>
 #include <modbuspp/pimp.h>
 
 /**

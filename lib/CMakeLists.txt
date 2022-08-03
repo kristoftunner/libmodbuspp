@@ -41,7 +41,7 @@ set_property(TARGET objlib PROPERTY POSITION_INDEPENDENT_CODE 1)
 
 # shared and static libraries built from the same object files
 add_library(modbuspp-shared SHARED $<TARGET_OBJECTS:objlib>)
-target_link_libraries(modbuspp-shared PRIVATE nlohmann_json::nlohmann_json)
+target_link_libraries(modbuspp-shared PRIVATE nlohmann_json::nlohmann_json modbus)
 set_target_properties(modbuspp-shared PROPERTIES 
   OUTPUT_NAME modbuspp 
   CLEAN_DIRECT_OUTPUT 1 
@@ -51,7 +51,7 @@ set_target_properties(modbuspp-shared PROPERTIES
 
 if(MODBUSPP_WITH_STATIC)
   add_library(modbuspp-static STATIC $<TARGET_OBJECTS:objlib>)
-  target_link_libraries(modbuspp-static PRIVATE nlohmann_json::nlohmann_json)
+  target_link_libraries(modbuspp-static PRIVATE nlohmann_json::nlohmann_json modbus)
   set_target_properties(modbuspp-static PROPERTIES
     OUTPUT_NAME modbuspp 
     CLEAN_DIRECT_OUTPUT 1 
