@@ -51,7 +51,7 @@ set_target_properties(modbuspp-shared PROPERTIES
 
 if(MODBUSPP_WITH_STATIC)
   add_library(modbuspp-static STATIC $<TARGET_OBJECTS:objlib>)
-  target_link_libraries(modbuspp-static PRIVATE nlohmann_json::nlohmann_json modbus)
+  target_link_libraries(modbuspp-static PRIVATE modbus)
   set_target_properties(modbuspp-static PROPERTIES
     OUTPUT_NAME modbuspp 
     CLEAN_DIRECT_OUTPUT 1 
